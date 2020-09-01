@@ -28,7 +28,7 @@
                 <tr>
                   {% for i in name_of_column %}
                     {% if i|not_equal %}
-                      <td bgcolor={{item|get_item:i|from_str_to_float|change_color}}>{{item|get_item:i}}</td>
+                      <td bgcolor={{item|get_item:i|from_str_to_float|change_color}}>{{item|get_item:i|from_str_to_float}}</td>
                     {% else %}
                       <td bgcolor="Gray">{{item|get_item:i}}</td>
                     {% endif %}

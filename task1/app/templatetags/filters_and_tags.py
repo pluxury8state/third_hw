@@ -10,17 +10,20 @@ def get_item(some_dict: dict, key: str):
 @register.filter
 def from_str_to_float(string: str):
     try:
-        new_value = float(string)
-    except Exception as e:
-        return '-'
-    else:
-        return new_value
+        if string != '':
+            new_value = float(string)
+            return new_value
+        else:
+            return '-'
+    except ValueError as e:
+        return 'ValueError'
+
 
 
 
 @register.filter
 def change_color(value):
-    try:
+    if type(value) == float:
         if value < 0:
             return '#0f7004'
         elif (value >= 1) and (value < 2):
@@ -31,7 +34,7 @@ def change_color(value):
             return '#fb0008'
         else:
             return 'white'
-    except TypeError as e:
+    else:
         return 'white'
 
 

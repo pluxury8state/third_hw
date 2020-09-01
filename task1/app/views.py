@@ -8,9 +8,10 @@ def inflation_view(request):
     # чтение csv-файла и заполнение контекста
     with open('inflation_russia.csv', 'r', encoding='utf-8') as file:
         reader = csv.DictReader(file, delimiter=';')
-        names_of_column = list(next(reader))
         for row in reader:
             data.append(row)
+        names_of_column = data[0].keys()
+
 
 
 

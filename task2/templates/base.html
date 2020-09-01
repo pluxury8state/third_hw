@@ -1,3 +1,4 @@
+{% load app_tags %}
 <!DOCTYPE html>{% load static %}
 <html>
   <head>
@@ -11,6 +12,18 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
+
+  <nav class="row">
+        <div class="nav-wrapper col s12">
+          <a href="{% url 'home' %}" class="brand-logo">
+          Компьютеры</a>
+          <ul class="right hide-on-med-and-down">
+            <li {{request.path|isclass:1}}><a href="{% url 'examples' %}">Примеры</a></li>
+            <li {{request.path|isclass:2}}><a href="{% url 'contacts' %}">Контакты</a></li>
+            <li {{request.path|isclass:3}}><a href="{% url 'about' %}">О проекте</a></li>
+          </ul>
+        </div>
+    </nav>
 
   <body>
     {% block first%}

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from pprint import pprint
 
 def home_view(request):
     template_name = 'app/home.html'
